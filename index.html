@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usia 50, Hormon 35 — Rahasia Tunda Menopause dari Penelitian Ilmuwan Norwegia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:      #1C3A2F;
+  --forest-deep: #122518;
+  --sage:        #7BAF8E;
+  --sage-light:  #B8D4C0;
+  --sage-pale:   #EAF2ED;
+  --cream:       #FAF6EF;
+  --cream-dark:  #F0EAE0;
+  --gold:        #C9973A;
+  --gold-light:  #E8C97A;
+  --text-main:   #1A1A1A;
+  --text-body:   #4A4A4A;
+  --text-muted:  #8A8A8A;
+  --cta:         #2D6A4F;
+  --cta-hover:   #1C4D38;
+  --font-head:   'Playfair Display', Georgia, serif;
+  --font-body:   'Inter', system-ui, sans-serif;
+  --font-acc:    'Lora', Georgia, serif;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-pill:999px;
+  --sh:    0 4px 28px rgba(28,58,47,.09);
+  --sh-lg: 0 12px 48px rgba(28,58,47,.15);
+  --max-w: 860px;
+  --pad:   clamp(1.25rem,5vw,2.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-size:clamp(.97rem,1.2vw,1.05rem);
+  color:var(--text-body);background:var(--cream);
+  line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);line-height:1.18;color:var(--text-main)}
+h1{font-size:clamp(2rem,4.5vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.55rem,3vw,2.35rem);font-weight:700}
+h3{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:600}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+
+/* TAG — always inline, centered via text-align on parent */
+.tag{
+  display:inline-block;
+  font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border:1.5px solid var(--sage);color:var(--sage);
+  border-radius:var(--r-pill);padding:.28rem .85rem;margin-bottom:.9rem;
+}
+.tag--gold  {border-color:var(--gold);   color:var(--gold)}
+.tag--white {border-color:var(--sage-light);color:var(--sage-light)}
+/* To center a tag, put text-align:center on the parent wrapper, not on the tag itself */
+
+/* BUTTON */
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 32px rgba(45,106,79,.32)}
+  50%     {box-shadow:0 8px 48px rgba(45,106,79,.55)}
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.45rem;
+  background:var(--cta);color:#fff;
+  font-family:var(--font-body);font-weight:600;
+  font-size:clamp(.9rem,1.5vw,1rem);
+  padding:.9rem 1.8rem;border-radius:var(--r-pill);border:none;cursor:pointer;
+  animation:pulse 2.8s ease-in-out infinite;
+  transition:transform .2s,background .2s,box-shadow .2s;
+  text-align:center;
+  /* Allow wrap on mobile — override with .btn--nowrap if needed */
+  white-space:normal;line-height:1.35;
+}
+/* Compact buttons that must not wrap (sticky bar, nav) */
+.btn--nowrap{white-space:nowrap;line-height:1}
+.btn:hover{background:var(--cta-hover);transform:translateY(-2px);animation:none;box-shadow:0 12px 40px rgba(45,106,79,.4)}
+.btn--gold{background:var(--gold);animation:none;box-shadow:0 6px 24px rgba(201,151,58,.38)}
+.btn--gold:hover{background:#b8862f;box-shadow:0 10px 32px rgba(201,151,58,.5)}
+.btn--full{width:100%}
+.btn--lg{font-size:clamp(.95rem,1.6vw,1.05rem);padding:1rem 2.2rem}
+.arr{font-size:1rem;transition:transform .2s;flex-shrink:0}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ANIMATIONS */
+@keyframes fadeUp  {from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeL   {from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeR   {from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn {from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+@keyframes floatY  {0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shimmer {0%{background-position:-200% center}100%{background-position:200% center}}
+
+.ao{opacity:0}
+.ao.vis[data-anim="up"]   {animation:fadeUp  .7s cubic-bezier(.22,1,.36,1) forwards}
+.ao.vis[data-anim="left"] {animation:fadeL   .7s cubic-bezier(.22,1,.36,1) forwards}
+.ao.vis[data-anim="right"]{animation:fadeR   .7s cubic-bezier(.22,1,.36,1) forwards}
+.ao.vis[data-anim="scale"]{animation:scaleIn .65s cubic-bezier(.22,1,.36,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.36s}.d4{animation-delay:.5s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* WAVE DIVIDERS */
+.wave{line-height:0;overflow:hidden;display:block}
+.wave svg{display:block;width:100%;height:auto}
+
+/* ─── HERO ─────────────────────────────────────── */
+.hero{background:var(--cream);padding:4rem 0 0;overflow:hidden;position:relative}
+.hero::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,175,142,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-text{padding-bottom:3.5rem}
+.hero-title{color:var(--forest);margin-bottom:1.1rem}
+.hero-title em{font-style:italic;color:var(--sage)}
+.hero-sub{
+  font-size:clamp(.97rem,1.4vw,1.08rem);color:var(--text-body);
+  line-height:1.75;margin-bottom:1.8rem;max-width:430px;
+}
+.hero-cta-grp{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem}
+.hero-note{font-size:.76rem;color:var(--text-muted);font-style:italic}
+
+.hero-img-wrap{position:relative}
+.hero-img-wrap img{
+  width:100%;height:540px;
+  object-fit:cover;object-position:center top;
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+  animation:floatY 6s ease-in-out infinite;
+}
+.hero-badge{
+  position:absolute;bottom:24px;left:-16px;
+  background:#fff;border-radius:var(--r-md);
+  padding:.75rem .95rem;box-shadow:var(--sh-lg);
+  display:flex;align-items:center;gap:.65rem;min-width:185px;
+}
+.hb-icon{width:38px;height:38px;background:var(--sage-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.hb-text strong{display:block;font-size:.8rem;font-weight:600;color:var(--forest)}
+.hb-text span{font-size:.7rem;color:var(--text-muted)}
+
+/* ─── PAIN ──────────────────────────────────────── */
+.pain{background:var(--forest-deep);position:relative;overflow:hidden;padding:5rem 0}
+.pain::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%237BAF8E' fill-opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.pain-img img{
+  width:100%;height:480px;object-fit:cover;object-position:center top;
+  border-radius:var(--r-lg);opacity:.88;filter:grayscale(15%);
+}
+.pain-title{color:#fff;margin-bottom:1.1rem}
+.pain-title span{color:var(--sage-light);font-style:italic}
+.pain-list{list-style:none;margin:1.1rem 0 1.4rem;display:flex;flex-direction:column;gap:.75rem}
+.pain-list li{
+  display:flex;align-items:flex-start;gap:.65rem;
+  font-size:.93rem;color:rgba(250,246,239,.82);line-height:1.55;
+}
+.pain-list li::before{content:'›';color:var(--sage-light);font-size:1.35rem;line-height:1;flex-shrink:0;margin-top:-1px}
+.pain-quote{
+  font-family:var(--font-acc);font-style:italic;font-size:1.05rem;
+  color:var(--sage-light);border-left:3px solid var(--sage);
+  padding-left:1.1rem;margin-top:1.1rem;line-height:1.65;
+}
+
+/* ─── BIG IDEA ──────────────────────────────────── */
+.bigidea{background:var(--cream);padding:5rem 0}
+.bigidea-hd{text-align:center;margin-bottom:2.75rem}
+.bigidea-hd h2{color:var(--forest);max-width:600px;margin:.5rem auto .9rem}
+.bigidea-hd p{color:var(--text-body);max-width:500px;margin:0 auto;font-size:.97rem;line-height:1.8}
+
+.infog{
+  background:linear-gradient(135deg,var(--forest) 0%,#2A5240 100%);
+  border-radius:var(--r-lg);padding:2.75rem 2.25rem;position:relative;overflow:hidden;
+}
+.infog::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(123,175,142,.12);pointer-events:none}
+.infog::after {content:'';position:absolute;bottom:-80px;left:-40px;width:260px;height:260px;border-radius:50%;background:rgba(201,151,58,.07);pointer-events:none}
+.infog-lbl{text-align:center;font-size:.66rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.85rem}
+.infog-hd{
+  font-family:var(--font-head);font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:700;
+  color:#fff;text-align:center;margin-bottom:2.25rem;line-height:1.3;position:relative;z-index:1;
+}
+.infog-hd em{color:var(--gold-light)}
+
+/* Pillars: 5 across on desktop */
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:.65rem;margin-bottom:2rem;position:relative;z-index:1}
+.pillar{
+  background:rgba(255,255,255,.07);border:1px solid rgba(184,212,192,.2);
+  border-radius:var(--r-md);padding:1.1rem .5rem;text-align:center;
+  transition:background .3s,transform .3s;
+}
+.pillar:hover{background:rgba(255,255,255,.13);transform:translateY(-3px)}
+.pillar-icon{font-size:1.55rem;margin-bottom:.4rem;display:block}
+.pillar-name{font-family:var(--font-head);font-size:.88rem;font-weight:700;color:var(--sage-light);margin-bottom:.2rem}
+.pillar-desc{font-size:.67rem;color:rgba(250,246,239,.6);line-height:1.4}
+
+/* Stats: 3 across always */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;position:relative;z-index:1}
+.stat{
+  text-align:center;padding:1rem .65rem;
+  background:rgba(201,151,58,.12);border:1px solid rgba(201,151,58,.25);border-radius:var(--r-md);
+}
+.stat-num{display:block;font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--gold-light);line-height:1;margin-bottom:.3rem}
+.stat-lbl{font-size:.7rem;color:rgba(250,246,239,.65);line-height:1.35}
+
+/* ─── PRODUK ─────────────────────────────────────── */
+.produk{background:var(--cream-dark);padding:5rem 0}
+.produk-hd{text-align:center;margin-bottom:2.5rem}
+.produk-hd h2{color:var(--forest);margin:.5rem 0 .4rem}
+.produk-hd p{color:var(--text-muted);font-size:.93rem}
+
+.produk-mock{width:100%;max-width:380px;margin:0 auto 2.25rem}
+.produk-mock img{width:100%;border-radius:var(--r-lg);box-shadow:0 20px 60px rgba(28,58,47,.2)}
+
+.produk-cards{display:flex;flex-direction:column;gap:.9rem}
+.pcard{
+  background:#fff;border-radius:var(--r-lg);padding:1.35rem 1.5rem;
+  box-shadow:var(--sh);display:flex;gap:1.1rem;align-items:flex-start;
+}
+.pcard-icon{width:44px;height:44px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;background:var(--sage-pale)}
+.pcard-icon--gold{background:#FBF3E2}
+.pcard-lbl{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--forest);color:var(--sage-light);padding:.18rem .65rem;border-radius:var(--r-pill);margin-bottom:.4rem}
+.pcard-lbl--bonus{background:var(--gold);color:#fff}
+.pcard-title{font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--forest);margin-bottom:.22rem;line-height:1.3}
+.pcard-desc{font-size:.86rem;color:var(--text-body);line-height:1.6}
+
+.pricing{
+  background:linear-gradient(135deg,var(--forest) 0%,#2A5240 100%);
+  border-radius:var(--r-lg);padding:1.85rem 1.5rem;text-align:center;
+}
+.pricing-old{font-size:.85rem;color:var(--sage-light);text-decoration:line-through;opacity:.65;margin-bottom:.2rem}
+.pricing-lbl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,201,122,.8);margin-bottom:.45rem}
+.price{
+  display:block;font-family:var(--font-head);font-weight:800;
+  font-size:clamp(2.2rem,5vw,3rem);line-height:1;margin-bottom:1.1rem;
+  background:linear-gradient(90deg,var(--gold) 25%,var(--gold-light) 50%,var(--gold) 75%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+.pricing-trust{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 1.25rem;margin-top:.9rem}
+.pricing-trust span{font-size:.73rem;color:var(--sage-light);opacity:.85}
+
+/* ─── HOW ────────────────────────────────────────── */
+.how{background:var(--sage-pale);padding:5rem 0}
+.how-hd{text-align:center;margin-bottom:2.75rem}
+.how-hd h2{color:var(--forest);margin:.5rem auto}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.35rem}
+.how-card{
+  background:#fff;border-radius:var(--r-lg);padding:1.85rem 1.35rem;
+  text-align:center;box-shadow:var(--sh);position:relative;
+  transition:transform .3s,box-shadow .3s;
+}
+.how-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.how-num{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  width:24px;height:24px;background:var(--cta);color:#fff;
+  border-radius:50%;font-size:.74rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.how-ico{width:60px;height:60px;margin:.2rem auto .9rem;background:var(--sage-pale);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.how-ico svg{width:28px;height:28px;stroke:var(--forest);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.how-card h3{font-size:.98rem;color:var(--forest);margin-bottom:.4rem}
+.how-card p{font-size:.85rem;color:var(--text-body);line-height:1.65}
+
+/* ─── PROOF ──────────────────────────────────────── */
+.proof{background:var(--cream);padding:5rem 0}
+.proof-hd{text-align:center;margin-bottom:2.75rem}
+.proof-hd h2{color:var(--forest);margin:.5rem auto}
+
+/* Desktop: 3 equal columns */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.qcard{
+  background:#fff;border-radius:var(--r-lg);padding:1.6rem;box-shadow:var(--sh);
+  border-top:3px solid var(--sage);position:relative;
+  transition:transform .3s,box-shadow .3s;
+  /* ensure full text visible on desktop */
+  overflow:visible;
+}
+.qcard:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.qmark{
+  font-family:var(--font-head);font-size:4.5rem;line-height:.8;
+  color:var(--sage-pale);position:absolute;top:.65rem;left:1.1rem;
+  pointer-events:none;user-select:none;
+}
+.qstars{color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:.45rem;position:relative;z-index:1}
+.qtext{
+  font-family:var(--font-acc);font-style:italic;
+  font-size:.9rem;color:var(--text-body);line-height:1.75;
+  margin-bottom:.9rem;position:relative;z-index:1;padding-top:1.1rem;
+}
+.qauthor{display:flex;align-items:center;gap:.55rem}
+.qavatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--forest));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0}
+.qname{font-size:.78rem;font-weight:600;color:var(--forest);display:block}
+.qloc{font-size:.7rem;color:var(--text-muted)}
+
+/* ─── PROOF NAV ARROWS (mobile only) ──────────────── */
+.proof-nav{
+  display:none;
+  align-items:center;justify-content:center;
+  gap:1rem;margin-top:1.25rem;
+}
+.proof-nav-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--white);border:1.5px solid var(--sage-light);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s,border-color .2s;
+  flex-shrink:0;
+}
+.proof-nav-btn:hover{background:var(--sage-pale);border-color:var(--sage)}
+.proof-nav-btn svg{width:16px;height:16px;stroke:var(--forest);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.proof-dots{display:flex;gap:.4rem;align-items:center}
+.proof-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--sage-light);transition:background .2s,transform .2s;
+}
+.proof-dot.active{background:var(--sage);transform:scale(1.3)}
+@media(max-width:767px){.proof-nav{display:flex}}
+.obj{background:var(--cream-dark);padding:5rem 0}
+.obj-inner{max-width:600px;margin:0 auto;text-align:center}
+.obj-inner h2{color:var(--forest);margin:.5rem auto 1.1rem}
+.obj-inner h2 em{color:var(--sage);font-style:italic}
+.obj-text{color:var(--text-body);line-height:1.8;margin-bottom:2.25rem}
+
+.trust-row{display:flex;justify-content:center;flex-wrap:wrap;gap:1.25rem 2rem;padding:1.5rem 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:2.25rem}
+.tbadge{display:flex;flex-direction:column;align-items:center;gap:.35rem}
+.tbadge-ico{width:44px;height:44px;background:var(--sage-pale);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.tbadge-ico svg{width:21px;height:21px;stroke:var(--forest);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tbadge span{font-size:.71rem;color:var(--text-body);font-weight:500}
+
+/* ─── CLOSING CTA ────────────────────────────────── */
+.closing{background:var(--cream);padding:5rem 0}
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.closing-img img{width:100%;height:520px;object-fit:cover;object-position:center top;border-radius:var(--r-lg);box-shadow:var(--sh-lg)}
+.closing-title{color:var(--forest);margin-bottom:1.1rem}
+.closing-title em{color:var(--sage);font-style:italic}
+.closing-sub{color:var(--text-body);line-height:1.8;margin-bottom:1.6rem}
+
+/* Checklist */
+.cklist{list-style:none;margin-bottom:1.6rem;display:flex;flex-direction:column;gap:.6rem}
+.cklist li{display:flex;align-items:flex-start;gap:.65rem;font-size:.9rem;color:var(--text-body);line-height:1.45}
+.cklist li .item-text{flex:1;min-width:0}
+.cklist li .item-label{display:block;font-weight:500}
+.cklist li .item-val{display:block;font-size:.76rem;color:var(--text-muted);margin-top:.1rem}
+.ck{width:20px;height:20px;border-radius:50%;background:var(--cta);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.ck svg{width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ck--gold{background:var(--gold)}
+
+.price-row{display:flex;align-items:baseline;gap:.65rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.price-old{font-size:.88rem;color:var(--text-muted);text-decoration:line-through}
+.price-new{
+  font-family:var(--font-head);font-size:2.4rem;font-weight:800;line-height:1;
+  background:linear-gradient(90deg,var(--gold) 25%,var(--gold-light) 50%,var(--gold) 75%);
+  background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+.closing-note{font-size:.76rem;color:var(--text-muted);margin-top:.7rem;font-style:italic;line-height:1.55}
+
+/* ─── STICKY BAR ──────────────────────────────────── */
+.sticky{
+  display:none;position:fixed;bottom:0;left:0;right:0;
+  background:var(--forest-deep);padding:.8rem var(--pad);z-index:999;
+  box-shadow:0 -4px 24px rgba(0,0,0,.25);
+  align-items:center;justify-content:space-between;gap:.75rem;
+}
+.sticky-txt strong{display:block;color:#fff;font-size:.85rem;line-height:1.3}
+.sticky-txt span{font-size:.72rem;color:var(--sage-light)}
+/* Sticky button — compact, never wraps */
+.sticky .btn{
+  animation:none;flex-shrink:0;
+  font-size:.82rem;padding:.62rem 1.1rem;
+  white-space:nowrap;min-width:auto;width:auto;
+}
+
+/* ─── FOOTER ──────────────────────────────────────── */
+.footer{background:var(--forest-deep);padding:1.85rem 0;text-align:center}
+.footer p{font-size:.73rem;color:rgba(184,212,192,.42);line-height:1.7}
+.footer a{color:rgba(184,212,192,.62);text-decoration:underline}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════ */
+@media(max-width:767px){
+  /* Base section padding */
+  .hero,.pain,.bigidea,.produk,.how,.proof,.obj,.closing,.footer{
+    padding-left:var(--pad);padding-right:var(--pad);
+  }
+
+  /* Hero */
+  .hero{padding-top:2.5rem;padding-bottom:0}
+  .hero-grid{grid-template-columns:1fr;gap:2rem}
+  .hero-img-wrap{order:-1}
+  .hero-img-wrap img{height:320px;border-radius:var(--r-lg)}
+  .hero-badge{display:none}
+  .hero-text{padding-bottom:2rem}
+  .hero-cta-grp{align-items:stretch}
+  /* Button: full width on mobile but sensible height */
+  .btn{font-size:.9rem;padding:.85rem 1.5rem}
+  .btn--lg{font-size:.92rem;padding:.9rem 1.5rem}
+  .hero-cta-grp .btn{width:100%}
+
+  /* Pain */
+  .pain{padding-top:3.5rem;padding-bottom:3.5rem}
+  .pain-grid{grid-template-columns:1fr;gap:1.75rem}
+  .pain-img img{height:260px}
+
+  /* Big idea infographic */
+  .infog{padding:2rem 1.25rem}
+  /* Pillars: 2+2+1 on mobile — use 2-col grid */
+  .pillars{grid-template-columns:repeat(2,1fr);gap:.55rem}
+  /* Last pillar (5th) centered */
+  .pillar:last-child{grid-column:1 / -1;max-width:160px;margin:0 auto;width:100%}
+  /* Stats: keep 3 col but smaller text */
+  .stats{grid-template-columns:repeat(3,1fr);gap:.45rem}
+  .stat{padding:.8rem .4rem}
+  .stat-num{font-size:1.4rem}
+  .stat-lbl{font-size:.62rem}
+
+  /* Produk */
+  .produk{padding-top:3.5rem;padding-bottom:3.5rem}
+  .produk-mock{max-width:280px}
+  .pcard{flex-direction:row;align-items:flex-start}
+
+  /* How */
+  .how{padding-top:3.5rem;padding-bottom:3.5rem}
+  .how-grid{grid-template-columns:1fr;gap:1.1rem}
+
+  /* Proof — horizontal scroll, full text visible */
+  .proof{padding-top:3.5rem;padding-bottom:3.5rem}
+  .proof-grid{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    gap:.9rem;padding-bottom:1rem;
+    -webkit-overflow-scrolling:touch;
+    /* extend to edges */
+    margin-left:calc(-1 * var(--pad));
+    margin-right:calc(-1 * var(--pad));
+    padding-left:var(--pad);
+    padding-right:var(--pad);
+  }
+  .qcard{
+    min-width:80vw;max-width:80vw;
+    scroll-snap-align:start;flex-shrink:0;
+    /* ensure text fully visible */
+    overflow:visible;height:auto;
+  }
+  /* Make sure text doesn't clip */
+  .qtext{font-size:.88rem;-webkit-line-clamp:unset;display:block;overflow:visible;white-space:normal}
+
+  /* Obj */
+  .obj{padding-top:3.5rem;padding-bottom:3.5rem}
+  .trust-row{gap:1rem 1.5rem}
+
+  /* Closing — fully contained, no overflow */
+  .closing{padding-top:3.5rem;padding-bottom:3.5rem;overflow:hidden}
+  .closing-grid{grid-template-columns:1fr;gap:2rem}
+  .closing-img img{height:280px}
+  /* Checklist stacked on mobile */
+  .cklist li{flex-wrap:nowrap;align-items:flex-start}
+  .cklist li .item-text{flex:1;min-width:0;word-break:break-word}
+  .cklist li .item-val{font-size:.73rem}
+  /* Price row stacked */
+  .price-row{flex-direction:column;gap:.25rem;align-items:flex-start}
+  .price-new{font-size:2rem}
+  /* Button — allow wrap, never overflow */
+  .closing .btn{
+    width:100%;box-sizing:border-box;
+    font-size:.88rem;padding:.9rem 1.25rem;
+    white-space:normal;line-height:1.35;
+    text-align:center;
+  }
+  /* Note text wrap */
+  .closing-note{word-break:break-word;font-size:.72rem}
+
+  /* Pricing card button fix too */
+  .pricing .btn{
+    white-space:normal;line-height:1.35;
+    font-size:.88rem;padding:.9rem 1.25rem;
+  }
+
+  /* Proof arrows spacing */
+  .proof-nav{margin-top:1.25rem}
+
+  /* Sticky bar */
+  .sticky{display:flex}
+  body{padding-bottom:68px}
+  .sticky .btn{font-size:.8rem;padding:.58rem 1rem;width:auto;min-width:auto}
+}
+
+@media(max-width:400px){
+  h1{font-size:1.75rem}
+  h2{font-size:1.3rem}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .pillar:last-child{max-width:140px}
+  .qcard{min-width:88vw;max-width:88vw}
+  .price-new{font-size:1.8rem}
+}
+
+@media(max-width:400px){
+  h1{font-size:1.75rem}
+  h2{font-size:1.35rem}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .pillar:last-child{max-width:140px}
+  .qcard{min-width:86vw;max-width:86vw}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+<div class="wrap">
+  <div class="hero-grid">
+
+    <div class="hero-text">
+      <div class="tag ao" data-anim="up">Metode Ritme Hormon Nordik</div>
+      <h1 class="hero-title ao d1" data-anim="up">
+        Usia Boleh 50.<br>Tapi Tubuh Gak Harus<br><em>Terasa Tua.</em>
+      </h1>
+      <p class="hero-sub ao d2" data-anim="up">
+        Panduan 30 hari berbasis riset ilmuwan Norwegia untuk wanita 40+ — energi balik, tidur nyenyak, mood stabil, dan gak panik soal menopause.
+      </p>
+      <div class="hero-cta-grp ao d3" data-anim="up">
+        <a href="#closing" class="btn btn--lg">
+          Ya, Saya Mau Mulai Hari Ini <span class="arr">→</span>
+        </a>
+        <span class="hero-note">Akses langsung setelah bayar · Bisa di HP, tablet, atau laptop</span>
+      </div>
+    </div>
+
+    <div class="hero-img-wrap ao d2" data-anim="right">
+      <img src="https://drive.google.com/thumbnail?id=1CkUKoEUosP5-b9pzBpdDpUvkbH3f8Liz&sz=w1200"
+           alt="Wanita Indonesia sehat dan percaya diri" loading="eager">
+      <div class="hero-badge">
+        <div class="hb-icon">🌿</div>
+        <div class="hb-text">
+          <strong>Berbasis Riset Ilmiah</strong>
+          <span>Penelitian Ilmuwan Norwegia</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- Wave: cream → forest-deep -->
+<div class="wave">
+  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,0 C360,56 1080,56 1440,0 L1440,56 L0,56 Z" fill="#FAF6EF"/>
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#122518"/>
+  </svg>
+</div>
+
+<!-- ══════════ PAIN ══════════ -->
+<section class="pain">
+<div class="wrap">
+  <div class="pain-grid">
+
+    <div class="pain-img ao" data-anim="left">
+      <img src="https://drive.google.com/thumbnail?id=1DCViHFsP0h82ANvicfhY_M8sJg3OU_MY&sz=w1200"
+           alt="Wanita kelelahan di pagi hari" loading="lazy">
+    </div>
+
+    <div class="ao d1" data-anim="up">
+      <div class="tag tag--white">Kamu Sendirian?</div>
+      <h2 class="pain-title">Pernah Ngerasain <span>Salah Satu dari Ini?</span></h2>
+      <ul class="pain-list">
+        <li>Dulu makan sedikit langsung turun. Sekarang sudah jaga makan, berat tetap naik.</li>
+        <li>Tidur 8 jam, tapi bangun masih capek dan kepala berat.</li>
+        <li>Mood gampang berubah tanpa alasan yang jelas.</li>
+        <li>Perut makin susah kempes walau sudah olahraga.</li>
+        <li>Malam susah tidur, sering bangun tengah malam.</li>
+      </ul>
+      <blockquote class="pain-quote">
+        "Apa ini tanda-tandanya ya...?"<br>
+        Kamu gak sedang rusak. Tubuh kamu sedang berbicara.<br>
+        Dan itu bisa dibaca.
+      </blockquote>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- Wave: forest-deep → cream -->
+<div class="wave" style="background:#122518">
+  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,0 L0,0 Z" fill="#122518"/>
+    <path d="M0,0 C360,56 1080,56 1440,0 L1440,56 L0,56 Z" fill="#FAF6EF"/>
+  </svg>
+</div>
+
+<!-- ══════════ BIG IDEA ══════════ -->
+<section class="bigidea">
+<div class="wrap">
+
+  <div class="bigidea-hd">
+    <div style="text-align:center"><div class="tag ao" data-anim="up">Penelitian Ilmuwan Norwegia</div></div>
+    <h2 class="ao d1" data-anim="up">Yang Bikin Wanita 50 Terasa Seperti 35 Bukan Keberuntungan</h2>
+    <p class="ao d2" data-anim="up">Bukan suplemen mahal. Bukan diet gila-gilaan. Penelitian yang melibatkan ribuan wanita di Norwegia menemukan satu pola yang selama ini diabaikan.</p>
+  </div>
+
+  <div class="infog ao d2" data-anim="scale">
+    <p class="infog-lbl">Metode Ritme Hormon Nordik · 5R System</p>
+    <h3 class="infog-hd">Wanita dengan <em>ritme gaya hidup yang stabil</em><br>melewati menopause jauh lebih ringan.</h3>
+    <div class="pillars">
+      <div class="pillar"><span class="pillar-icon">📖</span><div class="pillar-name">Read</div><div class="pillar-desc">Baca sinyal hormon tubuhmu</div></div>
+      <div class="pillar"><span class="pillar-icon">🔄</span><div class="pillar-name">Reset</div><div class="pillar-desc">Reset metabolisme harian</div></div>
+      <div class="pillar"><span class="pillar-icon">💪</span><div class="pillar-name">Rebuild</div><div class="pillar-desc">Bangun ulang otot & gerak</div></div>
+      <div class="pillar"><span class="pillar-icon">🌙</span><div class="pillar-name">Regulate</div><div class="pillar-desc">Atur tidur & kelola stres</div></div>
+      <div class="pillar"><span class="pillar-icon">✨</span><div class="pillar-name">Reinforce</div><div class="pillar-desc">Kunci ritual 30 hari</div></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="stat-num">30</span><span class="stat-lbl">Hari protokol siap dijalankan</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">Pillar untuk tubuh lebih stabil</span></div>
+      <div class="stat"><span class="stat-num">40+</span><span class="stat-lbl">Mitos menopause diluruskan</span></div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════ PRODUK ══════════ -->
+<section class="produk">
+<div class="wrap">
+
+  <div class="produk-hd">
+    <div style="text-align:center"><div class="tag tag--gold ao" data-anim="up">Apa yang Kamu Dapatkan</div></div>
+    <h2 class="ao d1" data-anim="up">Ini Bukan Sekadar Ebook.</h2>
+    <p class="ao d2" data-anim="up">Sistem harian yang bisa langsung kamu jalankan.</p>
+  </div>
+
+  <div class="produk-mock ao" data-anim="scale">
+    <img src="https://drive.google.com/thumbnail?id=1Ym5pFYwsYSGu8LXxBEpIi-FlkClRZZBS&sz=w1200"
+         alt="Bundle Usia 50 Hormon 35" loading="lazy">
+  </div>
+
+  <div class="produk-cards">
+    <div class="pcard ao d1" data-anim="up">
+      <div class="pcard-icon">📗</div>
+      <div>
+        <span class="pcard-lbl">Produk Utama</span>
+        <div class="pcard-title">Usia 50, Hormon 35</div>
+        <div class="pcard-desc">Penjelasan riset Norwegia dalam bahasa ringan + Metode Ritme Hormon Nordik (5R) + Protokol 30 hari untuk energi, tidur & mood yang lebih stabil.</div>
+      </div>
+    </div>
+    <div class="pcard ao d2" data-anim="up">
+      <div class="pcard-icon pcard-icon--gold">🎁</div>
+      <div>
+        <span class="pcard-lbl pcard-lbl--bonus">Bonus #1</span>
+        <div class="pcard-title">Peta Ritme Hormon 30 Hari</div>
+        <div class="pcard-desc">Tracker harian + checklist + weekly review. Supaya kamu gak cuma baca, tapi beneran ngejalanin dan pantau perkembanganmu sendiri.</div>
+      </div>
+    </div>
+    <div class="pcard ao d3" data-anim="up">
+      <div class="pcard-icon pcard-icon--gold">🎁</div>
+      <div>
+        <span class="pcard-lbl pcard-lbl--bonus">Bonus #2</span>
+        <div class="pcard-title">Panduan Makan, Gerak & Mitos Menopause</div>
+        <div class="pcard-desc">Cheat sheet praktis + 40 mitos menopause yang bikin salah langkah dan stres tanpa alasan.</div>
+      </div>
+    </div>
+    <div class="pricing ao d4" data-anim="up">
+      <div class="pricing-lbl">Harga Hari Ini</div>
+      <div class="pricing-old">Total nilai paket: Rp 391.000</div>
+      <span class="price">Rp 127.000</span>
+      <a href="#closing" class="btn btn--gold btn--full btn--lg">
+        Ya, Saya Mau — Akses Sekarang <span class="arr">→</span>
+      </a>
+      <div class="pricing-trust">
+        <span>🔒 Pembayaran Aman</span>
+        <span>⚡ Akses Langsung</span>
+        <span>📱 Bisa di HP & Laptop</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════ HOW ══════════ -->
+<section class="how">
+<div class="wrap">
+  <div class="how-hd">
+    <div style="text-align:center"><div class="tag ao" data-anim="up">Cara Kerja</div></div>
+    <h2 class="ao d1" data-anim="up">Semudah 3 Langkah. Mulai Hari Ini.</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-card ao d1" data-anim="up">
+      <div class="how-num">1</div>
+      <div class="how-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+      <h3>Kenali Tubuhmu</h3>
+      <p>Pakai Hormone Signal Scorecard untuk tahu area mana yang paling butuh perhatian sekarang.</p>
+    </div>
+    <div class="how-card ao d2" data-anim="up">
+      <div class="how-num">2</div>
+      <div class="how-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <h3>Ikuti Metode 5R</h3>
+      <p>Protokol 30 hari bertahap. Tanpa diet ekstrem, tanpa olahraga berat. Cukup satu langkah kecil yang konsisten.</p>
+    </div>
+    <div class="how-card ao d3" data-anim="up">
+      <div class="how-num">3</div>
+      <div class="how-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Pantau Perubahannya</h3>
+      <p>Catat di tracker 30 hari. Di hari ke-7, kamu sudah mulai merasakan bedanya.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════ PROOF ══════════ -->
+<section class="proof">
+<div class="wrap">
+  <div class="proof-hd">
+    <div style="text-align:center"><div class="tag ao" data-anim="up">Cerita Nyata</div></div>
+    <h2 class="ao d1" data-anim="up">Yang Lain Sudah Merasakannya</h2>
+  </div>
+  <div class="proof-grid">
+    <div class="qcard ao d1" data-anim="up">
+      <div class="qmark">"</div>
+      <div class="qstars">★★★★★</div>
+      <p class="qtext">Sudah bertahun-tahun aku bangun jam 3 pagi. Minggu kedua pakai protokol ini, aku mulai bisa tidur sampai pagi. Mood-ku ikut membaik — dan aku gak lagi ngemil tengah malam.</p>
+      <div class="qauthor">
+        <div class="qavatar">R</div>
+        <div><span class="qname">Rina, 48 tahun</span><span class="qloc">Surabaya</span></div>
+      </div>
+    </div>
+    <div class="qcard ao d2" data-anim="up">
+      <div class="qmark">"</div>
+      <div class="qstars">★★★★★</div>
+      <p class="qtext">Awalnya skeptis, takut kayak program diet lain yang bikin stres. Ternyata gak ada yang dipaksa. Aku mulai dari jalan kaki 10 menit. Tiga bulan kemudian, tubuhku lebih ringan dan gak panik soal menopause lagi.</p>
+      <div class="qauthor">
+        <div class="qavatar">D</div>
+        <div><span class="qname">Dewi, 52 tahun</span><span class="qloc">Bandung</span></div>
+      </div>
+    </div>
+    <div class="qcard ao d3" data-anim="up">
+      <div class="qmark">"</div>
+      <div class="qstars">★★★★★</div>
+      <p class="qtext">Bagian 40 mitos menopause di bonus kedua itu yang paling ngena. Banyak yang selama ini aku percaya ternyata keliru. Begitu tahu faktanya, aku jauh lebih tenang menjalani hari-hari.</p>
+      <div class="qauthor">
+        <div class="qavatar">S</div>
+        <div><span class="qname">Susi, 44 tahun</span><span class="qloc">Jakarta</span></div>
+      </div>
+    </div>
+  </div><!-- end proof-grid -->
+
+  <!-- Arrows + dots — mobile only -->
+  <div class="proof-nav" id="proofNav">
+    <button class="proof-nav-btn" id="proofPrev" aria-label="Sebelumnya">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="proof-dots" id="proofDots">
+      <div class="proof-dot active"></div>
+      <div class="proof-dot"></div>
+      <div class="proof-dot"></div>
+    </div>
+    <button class="proof-nav-btn" id="proofNext" aria-label="Berikutnya">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════ OBJECTION ══════════ -->
+<section class="obj">
+<div class="wrap">
+  <div class="obj-inner">
+    <div style="text-align:center"><div class="tag ao" data-anim="up">Kami Mengerti</div></div>
+    <h2 class="ao d1" data-anim="up">"Aku Sudah Coba Banyak Hal dan <em>Hasilnya Gitu-Gitu Aja..."</em></h2>
+    <p class="obj-text ao d2" data-anim="up">
+      Market soal hormon dan menopause memang penuh janji yang terlalu bagus. "Balik muda", "hormon seperti usia 20-an lagi."<br><br>
+      Ebook ini tidak menjanjikan itu. Yang kami janjikan: kamu punya sistem yang jelas untuk membaca sinyal tubuhmu dan membangun ritme harian yang mendukung. Pemahaman yang benar — dan langkah yang bisa benar-benar dijalankan.
+    </p>
+    <div class="trust-row ao d2" data-anim="up">
+      <div class="tbadge">
+        <div class="tbadge-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <span>Pembayaran Aman</span>
+      </div>
+      <div class="tbadge">
+        <div class="tbadge-ico"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <span>Akses Langsung</span>
+      </div>
+      <div class="tbadge">
+        <div class="tbadge-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <span>Bisa di HP & Laptop</span>
+      </div>
+      <div class="tbadge">
+        <div class="tbadge-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span>Berbasis Riset Ilmiah</span>
+      </div>
+    </div>
+    <a href="#closing" class="btn ao d3" data-anim="up" style="display:inline-flex">
+      Saya Siap Mulai Sekarang <span class="arr">→</span>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════ CLOSING CTA ══════════ -->
+<section class="closing" id="closing">
+<div class="wrap">
+  <div class="closing-grid">
+
+    <div class="closing-img ao" data-anim="left">
+      <img src="https://drive.google.com/thumbnail?id=1Ref668jTxFSk0q3_L7mFKhSXwLCwzIvB&sz=w1200"
+           alt="Wanita bahagia dan bersemangat setelah menjalani protokol" loading="lazy">
+    </div>
+
+    <div class="ao d1" data-anim="right">
+      <div><div class="tag tag--gold">Sekarang Giliran Kamu</div></div>
+      <h2 class="closing-title">Tubuhmu Masih Bisa Berasa Lebih <em>Muda.</em> Mulainya Hari Ini.</h2>
+      <p class="closing-sub">Gak perlu nunggu kondisi "siap sempurna". Cukup mulai satu langkah kecil — dan ebook ini jadi panduan pertama yang menemanimu.</p>
+
+      <ul class="cklist">
+        <li>
+          <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="item-text">
+            <span class="item-label">eBook Usia 50, Hormon 35</span>
+            <span class="item-val">nilai Rp 197.000</span>
+          </span>
+        </li>
+        <li>
+          <span class="ck ck--gold"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="item-text">
+            <span class="item-label">Bonus: Peta Ritme Hormon 30 Hari</span>
+            <span class="item-val">nilai Rp 97.000</span>
+          </span>
+        </li>
+        <li>
+          <span class="ck ck--gold"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="item-text">
+            <span class="item-label">Bonus: Panduan Makan, Gerak & Mitos Menopause</span>
+            <span class="item-val">nilai Rp 97.000</span>
+          </span>
+        </li>
+      </ul>
+
+      <div class="price-row">
+        <span class="price-old">Rp 391.000</span>
+        <span style="color:var(--text-muted)">→</span>
+        <span class="price-new">Rp 127.000</span>
+      </div>
+
+      <a href="#" class="btn btn--lg btn--full">
+        Ya, Saya Mau — Akses Sekarang <span class="arr">→</span>
+      </a>
+      <p class="closing-note">🔒 Pembayaran aman · Akses langsung setelah bayar · Bisa di HP, tablet, atau laptop</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="wrap">
+  <p>
+    © 2025 Usia 50, Hormon 35. Hak cipta dilindungi.<br>
+    Produk ini adalah panduan gaya hidup berbasis riset, bukan pengganti saran medis profesional.<br>
+    <a href="#">Syarat & Ketentuan</a> · <a href="#">Kebijakan Privasi</a>
+  </p>
+</div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky" id="stickyBar">
+  <div class="sticky-txt">
+    <strong>Usia 50, Hormon 35</strong>
+    <span>Hanya Rp 127.000</span>
+  </div>
+  <a href="#closing" class="btn btn--nowrap">Dapatkan <span class="arr">→</span></a>
+</div>
+
+<script>
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target) } });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.ao').forEach(el => obs.observe(el));
+
+// Sticky bar — show after hero scrolls past
+const sticky = document.getElementById('stickyBar');
+const heroEl = document.querySelector('.hero');
+if(sticky && heroEl){
+  const so = new IntersectionObserver(e => {
+    sticky.style.display = e[0].isIntersecting ? 'none' : 'flex';
+  }, { threshold: 0 });
+  so.observe(heroEl);
+}
+
+// Proof carousel arrows (mobile)
+(function(){
+  const grid = document.querySelector('.proof-grid');
+  const prev = document.getElementById('proofPrev');
+  const next = document.getElementById('proofNext');
+  const dots = document.querySelectorAll('.proof-dot');
+  if(!grid || !prev || !next) return;
+
+  let current = 0;
+  const cards = grid.querySelectorAll('.qcard');
+  const total = cards.length;
+
+  function goTo(idx){
+    current = Math.max(0, Math.min(idx, total - 1));
+    // scroll to card
+    const card = cards[current];
+    const offsetLeft = card.offsetLeft - parseFloat(getComputedStyle(grid).paddingLeft || 0);
+    grid.scrollTo({ left: card.offsetLeft - grid.offsetLeft, behavior: 'smooth' });
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+  }
+
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+
+  // sync dots on scroll
+  grid.addEventListener('scroll', () => {
+    const scrollLeft = grid.scrollLeft;
+    let closest = 0;
+    cards.forEach((c, i) => {
+      if(Math.abs(c.offsetLeft - grid.offsetLeft - scrollLeft) < Math.abs(cards[closest].offsetLeft - grid.offsetLeft - scrollLeft)){
+        closest = i;
+      }
+    });
+    current = closest;
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+  }, { passive: true });
+})();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }) }
+  });
+});
+</script>
+</body>
+</html>
