@@ -146,6 +146,9 @@ h3{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:600}
 .hb-text strong{display:block;font-size:.8rem;font-weight:600;color:var(--forest)}
 .hb-text span{font-size:.7rem;color:var(--text-muted)}
 
+/* Mobile-only image slot inside hero-text */
+.hero-img-mobile{display:none}
+
 /* ─── PAIN ──────────────────────────────────────── */
 .pain{background:var(--forest-deep);position:relative;overflow:hidden;padding:5rem 0}
 .pain::before{
@@ -396,10 +399,19 @@ h3{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:600}
 
   /* Hero */
   .hero{padding-top:2.5rem;padding-bottom:0}
-  .hero-grid{grid-template-columns:1fr;gap:2rem}
-  .hero-img-wrap{order:-1}
-  .hero-img-wrap img{height:320px;border-radius:var(--r-lg)}
-  .hero-badge{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  /* Hide desktop image column on mobile */
+  .hero-img-wrap{display:none}
+  /* Show mobile image slot (between title and subtext) */
+  .hero-img-mobile{
+    display:block;
+    margin:1.1rem 0 1.1rem;
+  }
+  .hero-img-mobile img{
+    width:100%;height:300px;
+    object-fit:cover;object-position:center top;
+    border-radius:var(--r-lg);
+  }
   .hero-text{padding-bottom:2rem}
   .hero-cta-grp{align-items:stretch}
   /* Button: full width on mobile but sensible height */
@@ -524,6 +536,11 @@ h3{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:600}
       <h1 class="hero-title ao d1" data-anim="up">
         Usia Boleh 50.<br>Tapi Tubuh Gak Harus<br><em>Terasa Tua.</em>
       </h1>
+      <!-- Mobile image slot — only visible on mobile via CSS order -->
+      <div class="hero-img-mobile ao d2" data-anim="scale">
+        <img src="https://drive.google.com/thumbnail?id=1CkUKoEUosP5-b9pzBpdDpUvkbH3f8Liz&sz=w1200"
+             alt="Wanita Indonesia sehat dan percaya diri" loading="eager">
+      </div>
       <p class="hero-sub ao d2" data-anim="up">
         Panduan 30 hari berbasis riset ilmuwan Norwegia untuk wanita 40+ — energi balik, tidur nyenyak, mood stabil, dan gak panik soal menopause.
       </p>
